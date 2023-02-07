@@ -13,12 +13,12 @@
             <caption>Personal Identification</caption>
             <tr>
                 <td><label for="id_fname">First name:</label></td>
-                <td><input type="text" id="id_fname" name="fname" placeholder="Ex: Clara" pattern="[A-Za-z]{2,}" required></td>
+                <td><input type="text" id="id_fname" name="fname" placeholder="Ex: Clara" required></td>
             </tr>
 
             <tr>
                 <td><label for="id_sname">Surname:</label></td>
-                <td><input type="text" id="id_sname" name="sname" placeholder="Ex: Domingo" pattern="[A-Za-z ]{2,}" required></td>
+                <td><input type="text" id="id_sname" name="sname" placeholder="Ex: Domingo" required></td>
             </tr>
             
             <tr>
@@ -36,12 +36,12 @@
 
             <tr>
                 <td><label for="id_postalCode">Postal Code:</label></td>
-                <td><input type="text" id="id_postalCode" name="postalCode" placeholder="Ex: 07283" pattern="[0-9]{5}$"></td>
+                <td><input type="number" id="id_postalCode" name="postalCode" placeholder="Ex: 07283"></td>
             </tr>
 
             <tr>
-                <td><label for="id_dniPassport">DNI:</label></td>
-                <td><input type="text" id="id_dniPassport" name="dniPassport" placeholder="Ex: 43229182S" pattern="^[0-9]{8}[A-Za-z]$" required></td>
+                <td><label for="id_dniPassport">DNI / Passport:</label></td>
+                <td><input type="text" id="id_dniPassport" name="dniPassport" placeholder="Ex: 43229182S" required></td>
             </tr>
 
             <tr>
@@ -51,17 +51,17 @@
 
             <tr>
                 <td><label for="id_phone">Phone:</label></td>
-                <td><input type="text" id="id_phone" name="phone" placeholder="Ex: 971 72 21 32" pattern="(^[0-9]{9}$|^\+[0-9]{2,3}[0-9]{9}$)"></td>
+                <td><input type="number" id="id_phone" name="phone" placeholder="Ex: 971 72 21 32"></td>
             </tr>
 
             <tr>
                 <td><label for="id_mobile">Mobile:</label></td>
-                <td><input type="text" id="id_mobile" name="mobile" placeholder="Ex: 689 98 97 71" pattern="(^[0-9]{9}$|^\+[0-9]{2,3}[0-9]{9}$)"></td>
+                <td><input type="number" id="id_mobile" name="mobile" placeholder="Ex: 689 98 97 71"></td>
             </tr>
 
             <tr>
                 <td><label for="id_birthDate">Birth date:</label></td>
-                <td><input type="date" id="id_birthDate" max="2023-01-01" name="birthDate"></td>
+                <td><input type="date" id="id_birthDate" name="birthDate"></td>
             </tr>
 
             <tr>
@@ -121,7 +121,7 @@
 
             <tr>
                 <td><label for="id_startDate">Start date:</label></td>
-                <td><input type="date" id="id_startDate" name="startDate" max="2023-02-06" required></td>
+                <td><input type="datetime-local" id="id_startDate" name="startDate" required></td>
             </tr>
 
             <tr>
@@ -213,13 +213,13 @@
 
             <tr>
                 <td><label for="id_cardNumber">Card number:</label></td>
-                <td><input type="text" id="id_cardNumber" name="cardNumber" placeholder="Ex: 0722 0333 2220 1212" pattern="(^[0-9]{16}|^[0-9 ]{19})$"></td>
+                <td><input type="number" id="id_cardNumber" name="cardNumber" placeholder="Ex: 0722 0333 2220 1212"></td>
             </tr>
 
             <tr>
                 <td><label for="id_cvv">CVV/CVC:</label></td>
-                <td><input type="text" id="id_cvv" name="cvv" placeholder="Ex: 723" pattern="^[0-9]{3}$"></td>
-            </tr>                                                               
+                <td><input type="number" id="id_cvv" name="cvv" placeholder="Ex: 723" pattern="^[0-9]{3}" required></td>
+            </tr>
 
             <tr>
                 <td><label for="id_expiration">Expiration date:</label></td>

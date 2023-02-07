@@ -1,0 +1,98 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    background-image: url('img/fondo7.jpg');
+    background-size: cover;
+}
+
+h1{
+    color: rgb(255, 0, 0);
+    font-size: 50px;
+    padding-left: 2%;
+}
+h3.noPelis{
+    text-align: center;
+    font-size: 70px;
+    padding-top: 6%;
+}
+
+div.pelicula{
+    background-image: url('img/fondo8.jpg');
+    background-size: cover;
+    color: white;
+    position: relative;
+    margin: 2%;
+    border: 2px solid black;
+    width: 50%;
+    height: 250px;
+    top: 10vh;
+    left: 20%;
+    margin-bottom: 5%;
+}
+h2{
+    position: relative;
+    left: 20px;
+}
+p.votos{
+    position: relative;
+    top: -25px;
+    left: 80%;
+}
+h3.sinopsisTitulo{
+    position: relative;
+    left: 25%;
+    bottom: 125px;
+}
+div.divSinopsisTexto{
+    position: relative;
+    width: 650px;
+    left: 7%;
+}
+p.sinopsisTexto{
+    position: relative;
+    left: 25%;
+    bottom: 110px;
+}
+a.botones{
+    padding-left: 80px;
+    padding-right: 50px;
+}
+.boton{
+    background-color: #555555;
+    border-color: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+p.duracion
+{
+    position: relative;
+    left: 2%;
+    bottom: 60px;
+    font-size: 25px;
+}
+a.link{
+    position: relative;
+    left:80%;
+    bottom: 100px;
+    font-size: 30px;
+    color: rgba(124, 216, 3, 0.719);
+    text-decoration: none;
+}
+a.link:hover{
+    color: rgb(255, 255, 255);
+}
+a.atras:visited{
+    color: red;
+}
+img{
+    width: 20%;
+    height: 50%;
+    padding-left: 2%;
+}
