@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS pseudo classes</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+            font-size: large;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        a:visited{
+            color: seagreen;
+        }
+        a:hover{
+            color: lightseagreen;
+            text-decoration: underline;
+        }
+        a:active{
+            color: blueviolet;
+        }
+
+        div.color:hover{
+            background-color: lightskyblue;
+        }
+
+        div.childLine::first-line{
+            color: red;
+        }
+
+        h2.childFirst span:first-child{
+            text-transform: uppercase;
+            color: black;
+        }
+
+        h2.oddEven span:nth-child(even){
+            text-transform: uppercase;
+            color: black;
+        }
+
+        h2.oddEven span:nth-child(odd){
+            text-transform: uppercase;
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.iessonferrer.net">iessonferrer</a>
+
+    <div class="color">pawpawpawpaw</div>
+    <div class="childLine">CHPPIPIPIIPP <br> PIIPIPIIPIP <br> CANCER</div>
+
+    <h2 class="childFirst">djasd ijasd <span>jiasidj aisod</span> <span>ssdlkaklsdaskl</span> jasijd ai</h2>
+
+    <h2 class="oddEven"><span>C</span> <span>O</span> <span>C</span> <span>K</span></h2>
+</body>
+</html>
