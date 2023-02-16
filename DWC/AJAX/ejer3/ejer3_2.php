@@ -10,7 +10,7 @@ function ciudadesPorLetra($q){
         echo "Error al conectar a MySQL: ". mysqli_connect_error();
     }
     mysqli_select_db($conexion, 'world');
-    $consulta = mysqli_prepare($conexion, "SELECT Name FROM city WHERE CountryCode LIKE='$q' ORDER BY Name ASC;"); 
+    $consulta = mysqli_prepare($conexion, "SELECT Name from city inner join country on city.CountryCode = country.Code WHERE country.Name LIKE '$q';"); 
     $consulta->execute();
     $res = $consulta->get_result();   
     $ciudades = array();
