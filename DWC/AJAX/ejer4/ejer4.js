@@ -6,7 +6,8 @@ function showHint(str) {
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function() {
 
-    separadas = this.responseText.split(",");
+
+    respuesta = JSON.parse(this.response);
 
     contenedor = document.getElementById("contenedor");
     contenedor.innerHTML = "";
@@ -14,16 +15,16 @@ function showHint(str) {
     h2 = document.createElement("h2");
     contenedor.appendChild(h2);
     
-    for (let i = 0; i < separadas.length; i++) {
+    for (let i = 0; i < respuesta.length; i++) {
 
       h2.innerHTML = document.getElementById("selectCiudad").value;
       text = document.createElement("p");
       contenedor.appendChild(text);
 
-      text.innerHTML = separadas[i];
+      text.innerHTML = "Distrito: "+respuesta[i].District +"<br><br>Poblacio: "+respuesta[i].Population;
       }
   }
-xmlhttp.open("GET", "ejer3_3.php?q=" + str+"&p="+p);
+xmlhttp.open("GET", "ejer4_3.php?q=" + str+"&p="+p);
 xmlhttp.send();
 }
 
@@ -53,7 +54,7 @@ function showHint2() {
           }
         }
       }
-    xmlhttp.open("GET", "ejer3.php?");
+    xmlhttp.open("GET", "ejer4.php?");
     xmlhttp.send();
   }
 
@@ -79,7 +80,7 @@ function showHint2() {
         option.innerHTML = separadas[i];
         }
     }
-  xmlhttp.open("GET", "ejer3_2.php?q=" + str);
+  xmlhttp.open("GET", "ejer4_2.php?q=" + str);
   xmlhttp.send();
 }
 window.onload = function(){

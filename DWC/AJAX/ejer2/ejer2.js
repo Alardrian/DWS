@@ -1,5 +1,6 @@
 
 function showHint(str) {
+  str = this.value;
     if (str.length == 0) {
         document.getElementById("txtHint").innerHTML = "";
         return;
@@ -28,4 +29,8 @@ function showHint(str) {
       xmlhttp.send();
     }
 }
-    
+
+window.onload = function(){
+  texto = document.getElementById("eleccion");
+  texto.addEventListener("change",this.showHint);
+}

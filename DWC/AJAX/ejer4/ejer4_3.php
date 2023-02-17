@@ -3,14 +3,15 @@ ini_set('display_errors', 'On');
 ini_set('html_errors', 1);
 
 $q = $_REQUEST["q"];
-
-function ciudadesPorLetra($q){
+$p = $_REQUEST["p"];
+function ciudadesPorLetra($q,$p){
     $conexion = mysqli_connect('localhost','root','12345');
     if (mysqli_connect_errno()) {
         echo "Error al conectar a MySQL: ". mysqli_connect_error();
     }
     mysqli_select_db($conexion, 'world');
-    $consulta = mysqli_prepare($conexion, "SELECT city.Name from city inner join country on city.CountryCode = country.Code WHERE country.Name LIKE '$q';"); 
+    $consulta = mysqli_prepare($conexion, "SELECT city.District, city.Population from city inner join country
+    ON city.CountryCode = country.Code WHERE city.Name LIKE '$q' AND country.Name LIKE '$p';"); 
     $consulta->execute();
     $res = $consulta->get_result();   
     $ciudades = array();
@@ -21,7 +22,7 @@ function ciudadesPorLetra($q){
     return $ciudades;
 }
 
-$ciudades = ciudadesPorLetra($q);
+$ciudades = ciudadesPorLetra($q,$p);
 
 $hint = "";
 if ($q !== "") {
@@ -29,10 +30,9 @@ if ($q !== "") {
     $len=strlen($q);
     foreach($ciudades as $name) {
         if ($hint === "") {
-            $hint = $name['Name'];
-        } else {
-        $hint .= ", ".$name['Name'];
+            $hint = "Districte: ".$name['District'].",Poblacio: ".$name['Population'];
         }
     }
 }
-echo $hint === "" ? "no suggestion" : $hint;
+echo json_encode($ciudades);
+//echo $hint === "" ? "no suggestion" : $hint;
