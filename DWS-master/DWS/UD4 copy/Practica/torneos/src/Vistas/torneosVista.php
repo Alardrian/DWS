@@ -32,8 +32,8 @@
 
         foreach($datosPartidos as $partido){
             if($partido->getFase() == "Cuartos"){
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorA()."'>".$partido->getIdJugadorA()."</a></div>";
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorB()."'>".$partido->getIdJugadorB()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorA()."'>Jugador".$partido->getIdJugadorA()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorB()."'>Jugador".$partido->getIdJugadorB()."</a></div>";
             }
             
         }
@@ -55,8 +55,8 @@
         <section id='quarterFinals'>";
         foreach($datosPartidos as $partido){
             if($partido->getFase() == "Semifinales"){
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorA()."'>".$partido->getIdJugadorA()."</a></div>";
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorB()."'>".$partido->getIdJugadorB()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorA()."'>Jugador".$partido->getIdJugadorA()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorB()."'>Jugador".$partido->getIdJugadorB()."</a></div>";
             }
         }
         echo"
@@ -72,8 +72,8 @@
         <section id='semiFinals'>";
         foreach($datosPartidos as $partido){
             if($partido->getFase() == "Final"){
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorA()."'>".$partido->getIdJugadorA()."</a></div>";
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorB()."'>".$partido->getIdJugadorB()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorA()."'>Jugador".$partido->getIdJugadorA()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getIdJugadorB()."'>Jugador".$partido->getIdJugadorB()."</a></div>";
             }
         }
         echo"
@@ -87,7 +87,7 @@
         <section id='final'>";
         foreach($datosPartidos as $partido){
             if($partido->getFase() == "Final"){
-                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getGanador()."'>".$partido->getGanador()."</a></div>";
+                echo "<div><a href='fichaJugadorVista.php?idJugador=".$partido->getGanador()."'>Jugador".$partido->getGanador()."</a></div>";
             }
         }
         echo"

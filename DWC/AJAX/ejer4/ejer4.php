@@ -3,7 +3,9 @@ ini_set('display_errors', 'On');
 ini_set('html_errors', 1);
 
 function ciudades(){
+
     $conexion = mysqli_connect('localhost','root','1234');
+
     if (mysqli_connect_errno()) {
         echo "Error al conectar a MySQL: ". mysqli_connect_error();
     }
@@ -22,3 +24,4 @@ function ciudades(){
 $ciudades = ciudades();
 
 echo json_encode($ciudades);
+

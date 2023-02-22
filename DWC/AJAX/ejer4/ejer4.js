@@ -36,20 +36,26 @@ function showHint2() {
       
         contador = 0;
         if (contador === 0){
+
         respuesta = JSON.parse(this.response);
         
+
         selectPais = document.getElementById("selectPais");
         selectPais.innerHTML = "";
         option = document.createElement("option");
         selectPais.appendChild(option);
         option.innerHTML = "Tria un país";
         option.disabled = true;
+
         for (let i = 1; i < respuesta.length; i++) {
+
 
           option = document.createElement("option");
           selectPais.appendChild(option);
 
+
           option.innerHTML = respuesta[i].Name;
+
           contador++;
           }
         }
@@ -62,7 +68,9 @@ function showHint2() {
     str = this.value;
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
+
       respuesta = JSON.parse(this.response);
+
     
       selectPais = document.getElementById("selectCiudad");
       selectPais.innerHTML = "";
@@ -72,6 +80,7 @@ function showHint2() {
       option.innerHTML = "Tria una ciutat";
       option.disabled = true;
       for (let i = 0; i < respuesta.length; i++) {
+
 
         option = document.createElement("option");
         selectPais.appendChild(option);

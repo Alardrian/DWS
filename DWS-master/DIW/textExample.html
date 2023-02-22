@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text examples</title>
+    <style>
+
+        body{
+            background-color: grey;
+        }
+
+        .div1{
+            background-color: black;
+            color: white;
+        }
+
+        p.left{
+            text-align: left;
+        }
+
+        p.center{
+            text-align: center;
+        }
+
+        p.right{
+            text-align: right;
+        }
+
+        div.justify{
+            border: 1px solid black;
+            padding: 50px;
+            width: 200px;
+            text-align: justify;
+            color: white;
+        }
+
+        div.lastCenter{
+            border: 1px solid black;
+            width: 500px;
+            text-align-last: justify;
+            color: white;
+        }
+
+        div.textOverUnderline{
+            color: white;
+            text-decoration: overline underline;
+        }
+
+        div.textOverUnderlineDouble{
+            color: white;
+            text-decoration: overline underline;
+            text-decoration-style: wavy;
+            text-decoration-thickness: 3px;
+        }
+
+        span.upperCase{
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+
+        span.lowerCase{
+            text-transform: lowercase;
+            text-decoration: underline;
+        }
+
+        p.indent{
+            text-indent: 50px;
+        }
+
+        p.wordSpacing{
+            word-spacing: 5px;
+        }
+
+        p.letterSpacing{
+            letter-spacing: 5px;
+        }
+
+        p.noWrap{
+            white-space: nowrap;
+        }
+
+        h1.shadow1{
+            text-shadow: 5px 5px 5px rgba(255, 0, 0, 0.356);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="div1">
+        This div has a black background color and white text
+    </div>
+    
+    <p class="left">Alignment is left</p>
+    <p class="center">Alignment is center</p>
+    <p class="right">Alignment is right</p>
+
+    <div class="justify">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, vitae consequatur dignissimos eveniet assumenda porro doloremque blandit
+        iis vero labore doloribus dolores quia culpa beatae voluptatum mollitia ipsa. Facere, ex rem.
+    </div>
+
+    <div class="lastCenter">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, vitae consequatur dignissimos eveniet assumenda porro doloremque blandit
+        iis vero labore doloribus dolores quia culpa beatae voluptatum mollitia ipsa. Facere, ex rem.
+    </div>
+
+    <div class="textOverUnderline">
+        is simply dummy text
+    </div>
+
+    <div class="textOverUnderlineDouble">
+        is simply dummy text
+    </div>
+
+    <p class="noWrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, vitae consequatur dignissimos eveniet assumenda porro doloremque blandit
+        iis vero labore doloribus dolores quia culpa beatae voluptatum mollitia ipsa. Facere, ex rem.</p>
+
+    <h1 class="shadow1">Shadow effect</h1>
+</body>
+</html>

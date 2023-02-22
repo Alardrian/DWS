@@ -9,12 +9,15 @@
         }
 
         function insertarTorneo($nombre, $fecha, $estado, $ganador) {
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
 
-            $numJugadores = 8;            
+            $numJugadores = 8;
+            if($estado == null){
+                $estado = "Encurso";
+            }
             mysqli_select_db($conexion, 'torneosTenisMesa');
             $consulta = mysqli_prepare($conexion, "INSERT INTO T_Torneo(nombre,numJugadores,fecha,estado,campeon) VALUES (?,?,?,?,?);");
             $consulta2 = mysqli_prepare($conexion, "UPDATE T_Jugador set totalTorneos = totalTorneos+1 WHERE idJugador IN (1,2,3,4,5,6,7,8);");  
@@ -25,7 +28,7 @@
         }
 
         function obtenerJugadores(){
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
@@ -43,7 +46,7 @@
         }
         
         function obtenerTorneoReciente(){
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
@@ -62,18 +65,20 @@
 
         function insertarPartidaCuartos($idTorneo) {
            
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
 
             mysqli_select_db($conexion, 'torneosTenisMesa');
 
-            $partidos = [1,2,3,4,5,6,7,8,];
+            $partidos = [1,4,2,5,3,6,8,7];
+
             $fase = "Cuartos";
             $cuatro = 4;
             for ($i=0; $i < 4; $i++) { 
                 $random = random_int(1,2);
+                
                 if ($random == 1){
                     $ganador = $i;
                 }else{
@@ -95,7 +100,7 @@
 
 
         function insertarPartida($idTorneo, $idJugadorA, $idJugadorB, $fase, $idGanador) {
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
@@ -127,7 +132,7 @@
         }
 
         function modificarPartida($idPartido, $idJugadorA, $idJugadorB, $fase, $idGanador) {
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
@@ -141,7 +146,7 @@
         }
 
         function obtenerPartidos($idTorneo){
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
@@ -160,7 +165,7 @@
         }
 
         function borrarPartido($idPartido) {
-            $conexion = mysqli_connect('localhost','root','1234');
+            $conexion = mysqli_connect('localhost','root','12345');
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }

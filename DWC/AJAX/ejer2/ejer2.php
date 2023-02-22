@@ -5,7 +5,8 @@ ini_set('html_errors', 1);
 $q = $_REQUEST["q"];
 
 function ciudadesPorLetra($q){
-    $conexion = mysqli_connect('localhost','root','1234');
+    $conexion = mysqli_connect('localhost','root','12345');
+
     if (mysqli_connect_errno()) {
         echo "Error al conectar a MySQL: ". mysqli_connect_error();
     }

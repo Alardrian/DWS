@@ -24,14 +24,14 @@
 
         echo"
         <h1>Ficha del jugador ".$idJugador."</h1>";
-        foreach($datosJugador as $jugador){
-                $porcentajeVictorias = ($jugador->getPartidosGanados()/$jugador->getTotalPartidos())*100;
+        foreach($datosJugador as $jugador){ 
+                $porcentajeVictorias = intval(($jugador->getPartidosGanados()/$jugador->getTotalPartidos())*100);
 
                 echo "<div>ID: ".$jugador->getID()."</div>";
                 echo "<div>Nombre: ".$jugador->getNombre()."</div>";
                 echo "<div>Total partidos: ".$jugador->getTotalPartidos()."</div>";
                 echo "<div>Partidos ganados: ".$jugador->getPartidosGanados()."</div>";
-                echo "<div>Porcentaje victorias:".$porcentajeVictorias."</div>";
+                echo "<div>Porcentaje victorias:".$porcentajeVictorias."%</div>";
                 echo "<div>Total torneos: ".$jugador->getTotalTorneos()."</div>";
                 echo "<div>Torneos ganados: ".$jugador->getTorneosGanados()."</div>";
                 echo "<div><a href='torneosVistaJugador.php'>Volver atras</a></div>";
