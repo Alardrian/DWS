@@ -5,7 +5,9 @@ ini_set('html_errors', 1);
 $q = $_REQUEST["q"];
 $p = $_REQUEST["p"];
 function ciudadesPorLetra($q,$p){
-    $conexion = mysqli_connect('localhost','root','12345');
+
+    $conexion = mysqli_connect('localhost','root','1234');
+
     if (mysqli_connect_errno()) {
         echo "Error al conectar a MySQL: ". mysqli_connect_error();
     }
@@ -24,15 +26,6 @@ function ciudadesPorLetra($q,$p){
 
 $ciudades = ciudadesPorLetra($q,$p);
 
-$hint = "";
-if ($q !== "") {
-    $q = strtolower($q);
-    $len=strlen($q);
-    foreach($ciudades as $name) {
-        if ($hint === "") {
-            $hint = "Districte: ".$name['District'].",Poblacio: ".$name['Population'];
-        }
-    }
-}
+
 echo json_encode($ciudades);
-//echo $hint === "" ? "no suggestion" : $hint;
+

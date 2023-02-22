@@ -36,20 +36,26 @@ function showHint2() {
       
         contador = 0;
         if (contador === 0){
-        separadas = this.responseText.split(",");
-      
+
+        respuesta = JSON.parse(this.response);
+        
+
         selectPais = document.getElementById("selectPais");
         selectPais.innerHTML = "";
         option = document.createElement("option");
         selectPais.appendChild(option);
         option.innerHTML = "Tria un país";
         option.disabled = true;
-        for (let i = 1; i < separadas.length; i++) {
+
+        for (let i = 1; i < respuesta.length; i++) {
+
 
           option = document.createElement("option");
           selectPais.appendChild(option);
 
-          option.innerHTML = separadas[i];
+
+          option.innerHTML = respuesta[i].Name;
+
           contador++;
           }
         }
@@ -63,7 +69,8 @@ function showHint2() {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
 
-      separadas = this.responseText.split(",");
+      respuesta = JSON.parse(this.response);
+
     
       selectPais = document.getElementById("selectCiudad");
       selectPais.innerHTML = "";
@@ -72,12 +79,13 @@ function showHint2() {
       selectPais.appendChild(option);
       option.innerHTML = "Tria una ciutat";
       option.disabled = true;
-      for (let i = 0; i < separadas.length; i++) {
+      for (let i = 0; i < respuesta.length; i++) {
+
 
         option = document.createElement("option");
         selectPais.appendChild(option);
 
-        option.innerHTML = separadas[i];
+        option.innerHTML = respuesta[i].Name;
         }
     }
   xmlhttp.open("GET", "ejer4_2.php?q=" + str);
